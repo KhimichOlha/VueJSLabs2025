@@ -1,6 +1,6 @@
 <template>
   <div class="todo-app">
-    <h1 class="app-title">📝 Мій To-Do список</h1>
+    <h1 class="app-title">📝 Список завдань </h1>
     
   
     <TodoStats 
