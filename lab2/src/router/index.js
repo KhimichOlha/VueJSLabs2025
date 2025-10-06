@@ -1,23 +1,40 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import { useAuth } from '@/composables/useAuth';
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(),
+  linkActiveClass: 'active-link', 
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) return savedPosition;
+    return { top: 0 }; 
+  },
   routes: [
+    { path: '/', component: () => import('@/views/Home.vue'), meta: { public: true } }, 
+    { path: '/login', component: () => import('@/views/Login.vue'), meta: { public: true } },
+    { path: '/register', component: () => import('@/views/Register.vue'), meta: { public: true } },
     {
-      path: '/',
-      name: 'home',
-      component: HomeView,
+      path: '/admin',
+      component: () => import('@/views/Admin.vue'),
+      meta: { requiresAuth: true },
+      children: [
+        { path: 'dashboard', component: () => import('@/views/Dashboard.vue') }, 
+        { path: 'users', component: () => import('@/views/Users.vue') },
+        { path: 'user/:id', component: () => import('@/views/UserDetail.vue') },
+        { path: 'reports', component: () => import('@/views/Reports.vue') },
+      ],
     },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue'),
-    },
+    { path: '/:pathMatch(.*)*', component: () => import('@/views/NotFound.vue') },
   ],
-})
+});
 
-export default router
+
+router.beforeEach((to, from, next) => {
+  const auth = useAuth();
+  if (to.meta.requiresAuth && !auth.isAuthenticated.value) {
+    next('/login');
+  } else {
+    next();
+  }
+});
+
+export default router;
