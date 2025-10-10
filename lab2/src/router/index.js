@@ -17,7 +17,12 @@ const router = createRouter({
       component: () => import('@/views/Admin.vue'),
       meta: { requiresAuth: true },
       children: [
-        { path: 'dashboard', component: () => import('@/views/Dashboard.vue') }, 
+        { path: 'dashboard', component: () => import('@/views/Dashboard.vue'),
+          children:[
+            {path: 'overview', component: () => import('@/views/Overview.vue')},
+            {path: 'activity', component: () => import('@/views/Activity.vue')}
+          ]
+         }, 
         { path: 'users', component: () => import('@/views/Users.vue') },
         { path: 'user/:id', component: () => import('@/views/UserDetail.vue') },
         { path: 'reports', component: () => import('@/views/Reports.vue') },
