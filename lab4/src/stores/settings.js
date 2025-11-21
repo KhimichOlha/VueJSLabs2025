@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
-import i18n from '@/i18n'; 
+import i18n from '../i18n'; 
 
 export const useSettingsStore = defineStore('settings', () => {
   const locale = ref('ua'); 

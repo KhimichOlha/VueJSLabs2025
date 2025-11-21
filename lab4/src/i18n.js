@@ -4,7 +4,7 @@ import en from './locales/en.json';
 
 const customModifiers = {
 
-  quoted: (str) => «${str}»
+  quoted: (str) => `«${str}»`
 };
 
 const i18n = createI18n({

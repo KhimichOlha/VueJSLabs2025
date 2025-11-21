@@ -3,7 +3,7 @@ import { useForm, useField, useFieldArray } from 'vee-validate';
 import * as yup from 'yup';
 import { toTypedSchema } from '@vee-validate/yup';
 
-// Схема валидации
+
 const schema = toTypedSchema(yup.object({
   name: yup.string().required('Обов’язкове поле').min(2, 'Мінімум 2 символи'),
   email: yup.string().required('Обов’язкове поле').email('Невірний формат email'),
@@ -14,23 +14,23 @@ const schema = toTypedSchema(yup.object({
   )
 }));
 
-// Инициализация формы
+
 const { handleSubmit, resetForm, setFieldError, errors } = useForm({
   validationSchema: schema,
   initialValues: {
     name: '',
     email: '',
     address: '',
-    phones: [''] // Изначально одно поле
+    phones: [''] 
   }
 });
 
-// Работа с динамическим массивом
+
 const { fields, push, remove } = useFieldArray('phones');
 
-// Обработчик отправки
+
 const onSubmit = handleSubmit((values) => {
-  // Эмуляция ошибки сервера (Требование 3.4.3)
+  
   if (values.email === 'error@test.com') {
     setFieldError('email', 'Цей email вже використовується (Server Error)');
     return;

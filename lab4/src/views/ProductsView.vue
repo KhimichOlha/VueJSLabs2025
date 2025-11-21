@@ -1,6 +1,6 @@
 <script setup>
-import { useProductsStore } from '@/stores/products';
-import { useCartStore } from '@/stores/cart';
+import { useProductsStore } from '../stores/products';
+import { useCartStore } from '../stores/cart';
 
 const productsStore = useProductsStore();
 const cartStore = useCartStore();
