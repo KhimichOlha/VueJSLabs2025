@@ -16,7 +16,7 @@ export const useSettingsStore = defineStore('settings', () => {
   return { locale, setLocale };
 }, {
   persist: {
-    key: 'my-app-settings', 
+    key: 'my-lab4-settings', 
     pick: ['locale'],       
   },
 });
