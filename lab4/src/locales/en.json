@@ -1,0 +1,32 @@
+{
+  "nav": {
+    "home": "Home",
+    "profile": "Profile",
+    "products": "Products",
+    "cart": "Cart"
+  },
+  "profile": {
+    "title": "User Profile",
+    "name": "Name",
+    "email": "Email",
+    "dob": "Date of Birth",
+    "address": "Address",
+    "phones": "Phones",
+    "add_phone": "Add Phone",
+    "submit": "Save",
+    "reset": "Reset",
+    "success": "Successfully saved!"
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Cart is empty",
+    "total": "Total",
+    "clear": "Clear Cart",
+    "buy": "Buy"
+  },
+  "products": {
+    "title": "Product Catalog",
+    "add": "Add to Cart",
+    "price": "Price"
+  }
+}
