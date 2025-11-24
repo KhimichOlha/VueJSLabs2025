@@ -1,8 +1,12 @@
 <script setup>
 import MyHeader from './components/MyHeader.vue';
 import HeroSection from './components/HeroSection.vue';
+import Features from './components/Features.vue'; 
+import HowItWorks from './components/HowItWorks.vue'; 
 import Pricing from './components/Pricing.vue';
-import ContactForm from './components/ContactForm.vue'; 
+import SocialProof from './components/SocialProof.vue'; 
+import ContactForm from './components/ContactForm.vue';
+import MyFooter from './components/MyFooter.vue'; 
 import Toast from 'primevue/toast';
 </script>
 
@@ -10,13 +14,21 @@ import Toast from 'primevue/toast';
   <div class="app-container">
     <Toast />
     <MyHeader />
+    
     <main>
       <HeroSection />
+      
+      <Features />
+      
+      <HowItWorks />
+      
       <Pricing />
       
-      <ContactForm />
+      <SocialProof />
       
+      <ContactForm />
     </main>
     
-    </div>
+    <MyFooter />
+  </div>
 </template>
