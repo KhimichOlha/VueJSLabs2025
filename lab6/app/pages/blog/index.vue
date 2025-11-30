@@ -1,6 +1,13 @@
 <script setup lang="ts">
 
 const { data: posts, status, error } = await useFetch('/api/posts')
+useSeoMeta({
+  title: 'Блог | Всі статті',
+  description: 'Останні новини та статті нашого блогу.',
+  ogTitle: 'Блог | Всі статті',
+  ogDescription: 'Читайте найсвіжіші статті про Nuxt та веб-розробку.'
+})
+
 </script>
 
 <template>
