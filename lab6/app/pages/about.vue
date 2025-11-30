@@ -1,3 +1,11 @@
+<script setup lang="ts">
+useSeoMeta({
+  title: 'Про нас | Nuxt Course Blog',
+  description: 'Інформація про автора та навчальний курс.',
+  ogTitle: 'Про нас | Nuxt Course Blog',
+  ogDescription: 'Інформація про автора та навчальний курс.'
+})
+</script>
 <template>
   <div>
     <h2 class="text-2xl font-bold mb-4">Про цей проєкт</h2>
