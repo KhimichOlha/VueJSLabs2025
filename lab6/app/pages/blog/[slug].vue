@@ -35,7 +35,7 @@ const { data: posts, status, error } = await useFetch('/api/posts')
 
         <template #footer>
           <UButton 
-            :to="/blog/${post.slug}" 
+            :to="`/blog/${post.slug}`" 
             color="primary" 
             variant="ghost" 
             label="Читати далі"
