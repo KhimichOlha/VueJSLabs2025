@@ -1,0 +1,36 @@
+<template>
+  <div id="app">
+    <TodoApp />
+  </div>
+</template>
+
+<script>
+import TodoApp from './components/TodoApp.vue'
+
+export default {
+  name: 'App',
+  components: {
+    TodoApp
+  }
+}
+</script>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+#app {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+</style>
