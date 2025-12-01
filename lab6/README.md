@@ -1,75 +1,34 @@
-# Nuxt Minimal Starter
+# Лабораторна робота №6: Nuxt 4 та Nuxt UI
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## 1. Запуск проєкту
+1. Встановити залежності: `npm install`
+2. Запустити в режимі розробки: `npm run dev`
+3. Для перевірки SEO (sitemap/robots): `npm run build` -> `npm run preview`
 
-## Setup
+## 2. Опис функціоналу
+- **API:** Реалізовано у папці `server/api`. Використовується `defineEventHandler` для імітації бази даних.
+- **Fetch:** Дані завантажуються через `useFetch`.
+  - Список: `app/pages/blog/index.vue` (рядок 3)
+  - Стаття: `app/pages/blog/[slug].vue` (рядок 5)
 
-Make sure to install dependencies:
+## 3. SEO Налаштування
+- Використано `useSeoMeta` для генерації Title та Description на всіх сторінках.
+- **Sitemap:** Доступний за адресою `/sitemap.xml`. Генерує маршрути автоматично.
+- **Robots:** Доступний за адресою `/robots.txt`. Заборонено індексацію `/api/*`.
 
-```bash
-# npm
-npm install
+## 4. Nuxt UI
+Використані компоненти:
+- `UContainer`, `UCard`, `UButton`, `UBadge` (сторінки блогу)
+- `USkeleton`, `UAlert` (стани завантаження та помилки)
+- `UIcon` (іконки)
 
-# pnpm
-pnpm install
+## 5. Знімки екрану
 
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+### Головна сторінка
+![alt text](/lab6/potp/home.png)
+###  Про нас
+![alt text](/lab6/potp/adout.png)
+### Стаття
+![alt text](/lab6/potp/art.png)
+### Блог
+![alt text](/lab6/potp/blog.png)
